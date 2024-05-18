@@ -4,51 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NIM Membership ID Card</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="header-container">
-            <div class="logo-container">
-                <img src="nimlogo.png" alt="NIM Logo">
-            </div>
-            <h1>NIM Membership e-ID Card</h1>
-        </div>
-        <div class="main-container">
-            <div class="form-container">
-                <h2>Enter Your Membership Details</h2>
-                <form id="idForm">
-                    <div class="form-group">
-                        <label for="fullName">Full Name:</label>
-                        <input type="text" id="fullName" name="fullName" required>
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-md-9">
+                <div class="header-container">
+                    <div class="logo-container">
+                        <img src="nimlogo.png" alt="NIM Logo">
                     </div>
-                    <div class="form-group">
-                        <label for="membershipNumber">Membership Number:</label>
-                        <input type="text" id="membershipNumber" name="membershipNumber" required>
+                    <h1>NIM Membership e-ID Card</h1>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2>Enter Your Membership Details</h2>
+                                <form id="idForm">
+                                    <div class="form-group">
+                                        <label for="fullName">Full Name:</label>
+                                        <input type="text" class="form-control" id="fullName" name="fullName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="membershipNumber">Membership Number:</label>
+                                        <input type="text" class="form-control" id="membershipNumber" name="membershipNumber" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="membershipGrade">Membership Grade:</label>
+                                        <select class="form-control" id="membershipGrade" name="membershipGrade">
+                                            <option value="Fellow">Fellow</option>
+                                            <option value="Member">Member</option>
+                                            <option value="Associate">Associate</option>
+                                            <option value="Graduate">Graduate</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passportPhoto">Passport Photo:</label>
+                                        <input type="file" class="form-control-file" id="passportPhoto" name="passportPhoto" accept="image/*" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Generate ID Card</button>
+                                </form>
+                            </div>
+                            <div class="col-md-6">
+                                <h2>ID Card Preview</h2>
+                                <canvas id="cardCanvasFront" width="470" height="290"></canvas>
+                                <canvas id="cardCanvasBack" width="470" height="290" class="hidden"></canvas>
+                                <button type="button" class="btn btn-success save-button hidden" onclick="saveCardsAsPNG()">Download Your Card</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="membershipGrade">Membership Grade:</label>
-                        <select id="membershipGrade" name="membershipGrade">
-                            <option value="Fellow">Fellow</option>
-                            <option value="Member">Member</option>
-                            <option value="Associate">Associate</option>
-                            <option value="Graduate">Graduate</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="passportPhoto">Passport Photo:</label>
-                        <input type="file" id="passportPhoto" name="passportPhoto" accept="image/*" required>
-                    </div>
-                    
-                    <button type="submit">Generate ID Card</button>
-                </form>
-            </div>
-            <div class="preview-container">
-                <h2>ID Card Preview</h2>
-                <canvas id="cardCanvas"></canvas> <button type="button" class="save-button hidden" onclick="saveCardAsPNG()">Download Your Card</button>
+                </div>
             </div>
         </div>
     </div>
     <script src="js/canvas.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

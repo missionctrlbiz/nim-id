@@ -1,24 +1,27 @@
-/* styles.css */
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700&display=swap');
 
 body {
     font-family: 'Red Hat Display', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #0010a3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
     max-width: 1400px;
-    margin: 10px auto;
-    padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
 }
 
 h1 {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .form-group {
@@ -33,7 +36,7 @@ label {
 input[type="text"],
 select,
 button {
-    width: 85%;
+    width: 100%;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
@@ -75,14 +78,12 @@ button {
 .header-container {
     display: flex;
     align-items: center;
-    /* Align items vertically */
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .logo-container {
-    flex: 0 0 auto;
-    /* Allow the logo container to shrink */
     margin-right: 20px;
-    /* Add some space between the logo and the heading */
 }
 
 .logo-container img {
@@ -97,7 +98,6 @@ button {
     display: inline-flex;
 }
 
-/* styles.css */
 #cardPreview {
     background-color: white;
     height: 500px;
@@ -109,47 +109,45 @@ button {
 .main-container {
     display: flex;
     justify-content: space-between;
-    /* Distribute items along the main axis */
 }
 
 .form-container,
 .preview-container {
     width: 48%;
-    /* Set initial width for both containers */
 }
 
 .form-container {
     flex: 0 0 60%;
-    /* Make the form container take up 60% of the available space */
 }
 
 .preview-container {
     flex: 0 0 40%;
-    /* Make the preview container take up 40% of the available space */
 }
 
 .preview-container #cardPreview {
     height: 400px;
-    /* Set height for the card preview */
     border: 1px solid #ccc;
-    /* Add border for the preview */
     border-radius: 5px;
     padding: 60px;
 }
 
-#cardCanvas {
+#cardCanvasFront, #cardCanvasBack {
     border: 1px solid #ccc;
-    /* Add a border for visibility */
+    border-radius: 10px;
     width: 470px;
-    /* Adjust the width and height as needed */
     height: 290px;
+    display: block;
+    margin: auto;
+}
+
+.hidden {
+    display: none;
 }
 
 /* New styles to match the membership card design */
-#cardCanvas {
+#cardCanvasFront, #cardCanvasBack {
     background-color: #f5f5f5;
     border: none;
-    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     font-family: 'Red Hat Display', sans-serif;
@@ -201,6 +199,7 @@ button {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    border: 5px solid #333;
 }
 
 .membership-grade {
