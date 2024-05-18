@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NIM Membership ID Card</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/png" href="nimlogo.png">    
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -21,7 +22,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <h2>Enter Your Membership Details</h2>
+                                <h4>Enter Your Membership Details</h4>
                                 <form id="idForm">
                                     <div class="form-group">
                                         <label for="fullName">Full Name:</label>
@@ -48,9 +49,9 @@
                                 </form>
                             </div>
                             <div class="col-md-6">
-                                <h2>ID Card Preview</h2>
+                                <h4>ID Card Preview</h4>
                                 <canvas id="cardCanvasFront" width="470" height="290"></canvas>
-                                <canvas id="cardCanvasBack" width="470" height="290" class="hidden"></canvas>
+                                <canvas id="cardCanvasBack" width="470" height="290" class="hidden" style="margin-bottom: 30px"></canvas>
                                 <button type="button" class="btn btn-success save-button hidden" onclick="saveCardsAsPNG()">Download Your Card</button>
                             </div>
                         </div>
