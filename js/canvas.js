@@ -65,23 +65,17 @@ function drawIDCardFront(fullName, membershipNumber, membershipGrade, expiration
         ctx.font = 'bold 13px Red Hat Display';
         ctx.fillText('Membership No', logoX, logoY + logoHeight + 110);
         ctx.font = '16px Red Hat Display';
-        ctx.fillText(membershipNumber, logoX, logoY + logoHeight + 130);
+        ctx.fillText(membershipNumber, logoX, logoY + logoHeight + 125);
 
-        // Draw membership grade
-        ctx.font = 'bold 20px Red Hat Display';
-        ctx.textAlign = 'right'; // Align text to the right
-        const gradeText = membershipGrade.toUpperCase();
-        const gradeTextWidth = ctx.measureText(gradeText).width;
-        const gradeX = canvas.width - 20;
-        const gradeY = logoY + logoHeight + 50;
-        ctx.fillText(gradeText, gradeX, gradeY);
+        ctx.font = 'bold 20px Red Hat Display'; // Reset font
+        ctx.fillText(`${membershipGrade.toUpperCase()}`, 330, 195);
 
         // Draw expiration date
         ctx.textAlign = 'left'; // Reset text alignment
         ctx.font = 'bold 13px Red Hat Display';
         ctx.fillText('Valid till:', logoX, logoY + logoHeight + 155);
         ctx.font = '16px Red Hat Display';
-        ctx.fillText(expirationDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' }), logoX, logoY + logoHeight + 170);
+        ctx.fillText(expirationDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' }), logoX, logoY + logoHeight + 168);
 
         // Draw passport photo with rounded borders
         drawRoundedImage(ctx, passportPhoto, 300, 20, 150, 150, 5, 2, '#000'); // Draw the rounded photo
